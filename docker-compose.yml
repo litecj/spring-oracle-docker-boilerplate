@@ -19,12 +19,13 @@ services:
     image: jaspeen/oracle-xe-11g
     container_name: oracle
     volumes:
-      - ~/docker/data:/u10/app/oracle jaspeen/oracle-xe-11g
+      - ~/docker/data:/u01/app/oracle jaspeen/oracle-xe-11g
     hostname: oracle
     networks:
       - backend-network
+    stdin_open: true
     environment:
-      oracle_ROOT_PASSWORD: root
+      ORACLE_ROOT_PASSWORD: root
     restart: always
     ports:
       - '1521:1521'
