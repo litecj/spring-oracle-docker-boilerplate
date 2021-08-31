@@ -16,8 +16,10 @@ services:
     networks:
       - backend-network
   oracle:
-    image: oraclelinux:8.4
+    image: jaspeen/oracle-xe-11g
     container_name: oracle
+    volumes:
+      - ~/docker/data:/u10/app/oracle jaspeen/oracle-xe-11g
     hostname: oracle
     networks:
       - backend-network
